@@ -59,9 +59,7 @@ from config import OPENAI_API_KEY
 
 openai.api_key = OPENAI_API_KEY
 
-def load_clients(csv_path):
-    with open(csv_path, encoding='utf-8') as f:
-        return [line.strip() for line in f if line.strip()]
+from client_db import load_clients
 
 def is_existing_client(profile_name, clients):
     for client in clients:

@@ -5,9 +5,15 @@ import os
 import re
 import pyautogui
 from notifier import notify
-from client_matcher import load_clients, is_existing_url
+from client_matcher import is_existing_url
+from client_db import load_clients, init_db, import_from_csv
+
 
 CLIENTS_CSV = os.path.join(os.path.dirname(__file__), '..', 'clients.csv')
+init_db()
+# Import from CSV if DB is empty
+if os.path.exists(CLIENTS_CSV) and not load_clients():
+    import_from_csv(CLIENTS_CSV)
 
 
 
