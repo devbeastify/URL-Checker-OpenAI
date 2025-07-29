@@ -1,0 +1,6 @@
+pillow
+pyautogui
+pytesseract
+win10toast_click
+openai
+keyboard
